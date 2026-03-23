@@ -18,7 +18,7 @@ import { AnimatedCard } from "@/components/animations/AnimatedCard";
 const staticProjects = [
   {
     icon: Zap,
-    image: "./public/siteShield.png",
+    image: "/siteShield.png",
     title: "SiteShield - URL Risk Analyzer",
     duration: "2025",
     description: [
@@ -29,7 +29,7 @@ const staticProjects = [
   },
   {
     icon: Building2,
-    image: "./public/urilify.png",
+    image: "/urilify.png",
     title: "Nexus - Enterprise Grade URL Shortening Microservice",
     duration: "2025",
     description: [
@@ -41,7 +41,7 @@ const staticProjects = [
   },
   {
     icon: Github,
-    image: "./public/git_workflow.png",
+    image: "/git_workflow.png",
     title: "Git Workflow Assistant",
     duration: "2025",
     description: [
@@ -53,7 +53,7 @@ const staticProjects = [
   },
   {
     icon: Car,
-    image: "./public/space.png",
+    image: "/space.png",
     title: "Smart Parking Space Availability Prediction",
     duration: "2024",
     description: [
@@ -64,7 +64,7 @@ const staticProjects = [
   },
   {
     icon: Zap,
-    image: "./public/weather.png",
+    image: "/weather.png",
     title: "Today's Weather Forecast",
     duration: "2025",
     description: [
