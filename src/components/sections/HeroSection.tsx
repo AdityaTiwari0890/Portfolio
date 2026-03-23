@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Github, Linkedin } from "lucide-react";
 import { useTypingEffect } from "@/hooks/useTypingEffect";
 
 export const HeroSection = () => {
@@ -64,7 +64,7 @@ export const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Nithin Ponnuru
+              Aditya Tiwari
             </motion.h1>
 
             {/* Headline */}
@@ -74,7 +74,7 @@ export const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
             >
-              Computer Science Undergraduate | Aspiring Software Engineer & Data Analyst
+              Computer Science Undergraduate | Aspiring Software Engineer
             </motion.h2>
 
             {/* Typing Effect */}
@@ -101,7 +101,8 @@ export const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              I transform data into actionable insights by building intelligent recommendation systems, interactive dashboards, and AI-driven solutions that solve real-world problems.            </motion.p>
+             Data Science and AI enthusiast with Full-Stack development skills, focused on building intelligent systems, interactive dashboards, and data-driven applications that transform complex data into real-world solutions.
+          </motion.p>
 
             {/* Buttons */}
             <motion.div
@@ -110,6 +111,33 @@ export const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
+              {/* Social Links */}
+              <div className="flex gap-3 mb-4 sm:mb-0">
+                <motion.a
+                  href="https://github.com/AdityaTiwari0890"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full glass flex items-center justify-center text-muted-foreground border border-primary/30 shadow-[0_0_12px_rgba(34,197,94,0.15)] hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-[0_0_25px_rgba(34,197,94,0.45)] transition-all duration-300"
+                  whileHover={{ y: -3, scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label="GitHub"
+                >
+                  <Github size={20} />
+                </motion.a>
+
+                <motion.a
+                  href="https://www.linkedin.com/in/adityatiwari089/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full glass flex items-center justify-center text-muted-foreground border border-primary/30 shadow-[0_0_12px_rgba(34,197,94,0.15)] hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-[0_0_25px_rgba(34,197,94,0.45)] transition-all duration-300"
+                  whileHover={{ y: -3, scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={20} />
+                </motion.a>
+              </div>
+
               <motion.button
                 onClick={handleScrollToProjects}
                 className="btn-gradient px-8 py-4 text-primary-foreground flex items-center justify-center gap-2"
@@ -139,8 +167,8 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
           >
             <img
-              src="/profile.jpg"
-              alt="Nithin Ponnuru"
+              src="/profile.png"
+              alt="Aditya Tiwari"
               className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-2xl border-4 border-primary/30"
             />
           </motion.div>

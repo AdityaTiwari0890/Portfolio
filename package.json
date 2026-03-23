@@ -1,9 +1,9 @@
 {
-  "name": "nithin-ponnuru-portfolio",
-  "author": "Nithin Ponnuru",
+  "name": "aditya-tiwari-portfolio",
+  "author": "Aditya Tiwari",
   "private": true,
   "version": "1.0.0",
-  "description": "Personal portfolio of Nithin Ponnuru - Data Science Student, Data Analyst, and AI Enthusiast",
+  "description": "Personal portfolio of Aditya Tiwari - Data Science Student, Data Analyst, and AI Enthusiast",
   "type": "module",
   "scripts": {
     "dev": "vite",

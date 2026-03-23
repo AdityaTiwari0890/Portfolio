@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, Github, Linkedin, Link, Instagram, X, Twitter } from "lucide-react";
+import { Mail, Phone, Github, Linkedin, Code, BookOpen } from "lucide-react";
 import { FadeInLeft } from "@/components/animations/MotionWrapper";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
 
@@ -7,31 +8,77 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "ponnurunithin8@gmail.com",
-    href: "mailto:ponnurunithin8@gmail.com",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+91-7569961434",
-    href: "tel:+917569961434",
+    value: "aktiwari089081@gmail.com",
+    href: "mailto:aktiwari089081@gmail.com",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/ponnuru-nithin",
-    href: "https://www.linkedin.com/in/ponnuru-nithin/"
+    value: "linkedin.com/in/adityatiwari089",
+    href: "https://www.linkedin.com/in/adityatiwari089/"
   },
 ];
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/nithin-ponnuru", label: "GitHub" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/ponnuru-nithin/", label: "LinkedIn" },
-  { icon: Instagram, href: "https://www.instagram.com/nithin.ponnuru/", label: "Instagram" },
-  { icon: Twitter, href: "https://x.com/nithinponnuru", label: "X (Twitter)" },
+  { icon: Github, href: "https://github.com/AdityaTiwari0890", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/adityatiwari089/", label: "LinkedIn" },
+  { icon: BookOpen, href: "https://www.geeksforgeeks.org/profile/aktiwarikx61", label: "GeeksforGeeks" },
+  { icon: Code, href: "https://leetcode.com/u/Aditya089081/", label: "LeetCode" },
 ];
 
 export const ContactSection = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    if (!name || !email || !message) {
+      setStatus("Please fill in all fields before submitting.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Create a hidden form and submit it to FormSubmit
+    const form = document.createElement('form');
+    form.action = 'https://formsubmit.co/aditya.tiwari0890@gmail.com';
+    form.method = 'POST';
+    form.style.display = 'none';
+
+    // Add form fields
+    const fields = [
+      { name: 'name', value: name },
+      { name: 'email', value: email },
+      { name: 'message', value: message },
+      { name: '_subject', value: `Portfolio Contact: Message from ${name}` },
+      { name: '_captcha', value: 'false' },
+      { name: '_template', value: 'table' },
+      { name: '_next', value: window.location.href }
+    ];
+
+    fields.forEach(field => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = field.name;
+      input.value = field.value;
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
+
+    // Show success message
+    setStatus("Thank you! Your message has been sent successfully. I will get back to you shortly.");
+    setName("");
+    setEmail("");
+    setMessage("");
+    setIsSubmitting(false);
+  };
+
   return (
     <section id="contact" className="py-24 relative">
       <div
@@ -44,7 +91,7 @@ export const ContactSection = () => {
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <FadeInLeft>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-4">
-            <span className="section-number">07.</span>
+            <span className="section-number">08.</span>
             Get In Touch
           </h2>
         </FadeInLeft>
@@ -57,8 +104,44 @@ export const ContactSection = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            Open to internships, projects, and learning opportunities.
           </motion.p>
+
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 text-left mb-10">
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="input border border-border/40 bg-background text-foreground rounded-lg px-4 py-3"
+              placeholder="Your name"
+              required
+            />
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="input border border-border/40 bg-background text-foreground rounded-lg px-4 py-3"
+              placeholder="Your email"
+              required
+            />
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              rows={5}
+              className="textarea border border-border/40 bg-background text-foreground rounded-lg px-4 py-3"
+              placeholder="Your message"
+              required
+            />
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="bg-primary text-primary-foreground rounded-lg py-3 font-semibold hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+
+          {status && (
+            <div className="mb-6 text-sm text-primary/90">{status}</div>
+          )}
 
           {/* Contact Cards */}
           <div className="flex flex-col gap-4 mb-10">

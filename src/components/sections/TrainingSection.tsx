@@ -4,19 +4,29 @@ import { AnimatedCard } from "@/components/animations/AnimatedCard";
 
 const trainingItems = [
   {
-    title: "AI & ML for Real-world Problem Solving – Summer Internship",
-    organization: "Centre for Professional Enhancement",
+    title: "Full Stack MERN Developer Training",
+    organization: "CipherSchools",
     duration: "Jun 2025 – Jul 2025",
+    certificate: "https://drive.google.com/file/d/1qlr7Uv2ZqZFGRVAuKBTZQaZx93zp1Ibm/view?usp=drive_link",
     points: [
-      "Built foundational understanding of AI/ML concepts, supervised & unsupervised learning, and real-world AI applications.",
-
-      "Implemented regression and classification models using Python, NumPy, Pandas, and Scikit-learn.",
-
-      "Applied data preprocessing, train-test splitting, and performance evaluation techniques for model optimization.",
-
-      "Experimented with Random Forest, Decision Trees, and SVM for predictive modeling.",
-
-      "Learned neural network and deep learning basics and completed an end-to-end ML project with documentation and deployment concepts",
+      "Learned full-stack web development using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
+      "Built responsive web applications using React, HTML, CSS, and modern JavaScript (ES6+).",
+      "Developed RESTful APIs using Node.js and Express for backend services.",
+      "Implemented database operations using MongoDB and Mongoose.",
+      "Worked on Hybrid authentication systems, CRUD operations, and full-stack project deployment.",
+    ],
+  },
+  {
+    title: "Field Data Collection Volunteer",
+    organization: "Uttkarsh Jan Kalyan (NGO)",
+    duration: "Jun 2024 – Jul 2024",
+    certificate: "https://drive.google.com/file/d/1n-O5JDtJkz9oeii-TiRGK1JOCWeRkMt2/view?usp=sharing",
+    points: [
+      "Conducted field surveys in villages across Uttar Pradesh to identify households lacking access to clean water.",
+      "Collected data on availability of hand pumps, tap water, and tube wells.",
+      "Documented water accessibility issues faced by rural communities.",
+      "Contributed data to support the Uttar Pradesh Government Tap Water Scheme planning and implementation.",
+      "Collaborated with local residents and NGO teams to ensure accurate data collection.",
     ],
   },
 ];
@@ -34,7 +44,7 @@ export const TrainingSection = () => {
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <FadeInLeft>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-4">
-            <span className="section-number">03.</span>
+            <span className="section-number">04.</span>
             Training / Experience
           </h2>
         </FadeInLeft>
@@ -69,6 +79,22 @@ export const TrainingSection = () => {
                       </li>
                     ))}
                   </ul>
+
+                  {item.certificate && (
+                    <div className="mt-4">
+                      <a
+                        href={item.certificate}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors duration-300 text-sm font-medium"
+                      >
+                        View Certificate
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             </AnimatedCard>

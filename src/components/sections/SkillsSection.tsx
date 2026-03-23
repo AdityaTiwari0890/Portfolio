@@ -8,32 +8,50 @@ const skillCategories = [
     icon: Code2,
     title: "Languages",
     skills: [
-      { name: "Python", level: "Advanced" },
-      { name: "C", level: "Intermediate" },
-      { name: "C++", level: "Intermediate" },
-      { name: "Java", level: "Intermediate" },
-      { name: "JavaScript", level: "Intermediate" },
+      { name: "Python", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { name: "C", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+      { name: "C++", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
+      { name: "Java", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+      { name: "JavaScript", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+      { name: "SQL", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
     ],
   },
   {
     icon: Brain,
     title: "Web Technologies",
     skills: [
-      { name: "HTML", level: "Advanced" },
-      { name: "CSS", level: "Intermediate" },
-      { name: "Flask", level: "Intermediate" },
+      { name: "HTML", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { name: "CSS", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+      { name: "Flask", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
+      { name: "React", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "NodeJS", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "ExpressJS", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+    ],
+  },
+  {
+    icon: Brain,
+    title: "Machine Learning",
+    skills: [
+      { name: "Numpy", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" },
+      { name: "Pandas", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
+      { name: "Matplotlib", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" },
+      { name: "Seaborn", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/seaborn/seaborn-original.svg" },
+      { name: "Supervised", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikit-learn/scikit-learn-original.svg" },
+      { name: "Unsupervised", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikit-learn/scikit-learn-original.svg" },
+      { name: "Neural Network", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+      { name: "Deep Learning", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
     ],
   },
   {
     icon: BarChart3,
     title: "Tools & Platforms",
     skills: [
-      { name: "Power BI", level: "Advanced" },
-      { name: "MS Excel", level: "Advanced" },
-      { name: "VMware", level: "Intermediate" },
-      { name: "Ubuntu", level: "Intermediate" },
-      { name: "Kali Linux", level: "Beginner" },
-      { name: "GitHub", level: "Advanced" },
+      { name: "Power BI", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg" },
+      { name: "MS Excel", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/excel/excel-original.svg" },
+      { name: "VMware", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vmware/vmware-original.svg" },
+      { name: "Ubuntu", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" },
+      { name: "Kali Linux", level: "Beginner", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kali/kali-original.svg" },
+      { name: "GitHub", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
     ],
   },
   {
@@ -44,7 +62,6 @@ const skillCategories = [
       { name: "Time Management", level: "Advanced" },
       { name: "Adaptability", level: "Advanced" },
       { name: "Problem Solving", level: "Advanced" },
-      { name: "Effective Communication", level: "Advanced" },
     ],
   },
 ];
@@ -63,12 +80,12 @@ export const SkillsSection = () => {
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <FadeInLeft>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-4">
-            <span className="section-number">04.</span>
+            <span className="section-number">05.</span>
             Skills & Technologies
           </h2>
         </FadeInLeft>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
             <AnimatedCard
               key={category.title}
@@ -106,7 +123,11 @@ export const SkillsSection = () => {
                       }}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="w-2 h-2 rounded-full bg-primary" />
+                        {skill.iconUrl ? (
+                          <img src={skill.iconUrl} alt={`${skill.name} icon`} className="w-4 h-4 object-contain" />
+                        ) : (
+                          <span className="w-2 h-2 rounded-full bg-primary" />
+                        )}
                         <span className="text-muted-foreground font-medium text-sm">
                           {skill.name}
                         </span>

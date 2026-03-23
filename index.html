@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nithin's Portfolio</title>
-
+    <title>Aditya Tiwari | Portfolio</title>
+    <meta name="description" content="Portfolio of Aditya Tiwari — Data Science, Analytics, and Web Development projects. Explore GitHub work, projects, and contact details." />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,38 +12,6 @@
 
 <body>
     <div id="root"></div>
-
-    <!-- Chatbase AI Agent -->
-    <script>
-    (function(){
-        if(!window.chatbase || window.chatbase("getState") !== "initialized"){
-            window.chatbase = (...arguments) => {
-                if(!window.chatbase.q){ window.chatbase.q = [] }
-                window.chatbase.q.push(arguments)
-            };
-            window.chatbase = new Proxy(window.chatbase, {
-                get(target, prop){
-                    if(prop === "q"){ return target.q }
-                    return (...args) => target(prop, ...args)
-                }
-            });
-        }
-
-        const onLoad = function(){
-            const script = document.createElement("script");
-            script.src = "https://www.chatbase.co/embed.min.js";
-            script.id = "UEVkTTBig74d2IkVM5eU4";
-            script.domain = "www.chatbase.co";
-            document.body.appendChild(script);
-        };
-
-        if(document.readyState === "complete"){
-            onLoad();
-        } else {
-            window.addEventListener("load", onLoad);
-        }
-    })();
-    </script>
 
     <script type="module" src="/src/main.tsx"></script>
 </body>

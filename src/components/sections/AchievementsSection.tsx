@@ -5,16 +5,28 @@ import { AnimatedCard } from "@/components/animations/AnimatedCard";
 const achievements = [
   {
     icon: Trophy,
-    title: "Telangana State Science Fair Awardee",
+    title: "Inter-School Chess Competition Winner",
     detail:
-      "Selected at State-Level Science Fair (10th Standard) and awarded ₹10,000 prize money by Telangana State Government for innovative project presentation.",
+      "Secured 1st place in the Inter-School Chess Competition while representing JSM High School, Warangal, and received an award for exceptional strategic thinking and performance.",
   },
   {
-    icon: Star,
-    title: "Hackathon Final Round Qualifier",
-    detail:
-      "Selected for the Final Round in B.Tech 1st Year Hackathon, competing among top-performing teams.",
-  },
+  icon: Star,
+  title: "Solved 300+ DSA Problems",
+  detail:
+    "Solved 400+ Data Structures and Algorithms problems using C++ on LeetCode ,GeeksforGeeks and Upwork, strengthening problem-solving and algorithmic thinking.",
+},
+{
+  icon: Star,
+  title: "Solved 100+ SQL Problems",
+  detail:
+    "Solved 100+ SQL challenges on LeetCode, focusing on complex queries, joins, aggregations, and database optimization concepts.",
+},
+{
+  icon: Star,
+  title: "288+ Hours Coding Practice on NeoColab",
+  detail:
+    "Invested 288+ hours on NeoColab practicing programming concepts including OOP, C, C++, Java, and Data Structures & Algorithms through structured coding exercises.",
+},
 ];
 
 export const AchievementsSection = () => {
@@ -31,7 +43,7 @@ export const AchievementsSection = () => {
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <FadeInLeft>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-4">
-            <span className="section-number">06.</span>
+            <span className="section-number">07.</span>
             Achievements
           </h2>
         </FadeInLeft>

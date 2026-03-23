@@ -1,12 +1,16 @@
 import { useState, useEffect, useCallback } from "react";
 
 const typingTexts = [
-  "Python • C/C++ • Java • JavaScript", 
-  "• HTML/CSS • SQL • Power BI • MS Excel",
+  "Python • C/C++ • JavaScript",
+  "• Power BI • MS Excel • DBMS(SQL)", 
+  "• HTML/CSS • NodeJS • Express JS",
+  "• oops(C++) • Computer Network • Operating System",
+  "• Numpy • Pandas • Scikit - learn • Neural Network • Deep Learning",
+  "Creating Interactive Websites",
   "Creating Interactive Analytics Dashboards",
+  "Creating Complex Models",
   "• Problem-solving • Critical Thinking", 
-  "• Teamwork • Time Management",
-  "Learning fast, shipping faster",
+  "• Teamwork • Time Management • Strategic Learner",
 ];
 
 export const useTypingEffect = (typeSpeed = 100, deleteSpeed = 80, pauseDuration = 800) => {

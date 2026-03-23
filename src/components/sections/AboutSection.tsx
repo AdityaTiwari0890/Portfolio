@@ -22,16 +22,16 @@ export const AboutSection = () => {
 
           <FadeInUp delay={0.1}>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              B.Tech CSE student at Lovely Professional University (3rd Year) specializing in Data Science, machine learning, and analytics. Experienced in building intelligent recommendation systems, AI-powered applications, and dynamic dashboards using Python, Power BI, and MS Excel to transform raw data into actionable insights.
+              I'm a B.Tech Computer Science student with an 8.4 CGPA. I build data-driven solutions in Data Science, AI, and Full-Stack Development, and I specialize in end-to-end systems—from data preprocessing and analytics to machine learning model building and deployment.
+            </p>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              I develop machine learning models, analytics dashboards, and web apps using Python, Flask, React, Node.js, Power BI, and database technologies. I also have practical experience with Linux (Ubuntu, Kali), VMware, Git, and strong soft skills in teamwork, time management, and problem solving.
             </p>
           </FadeInUp>
 
           <FadeInUp delay={0.2}>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-            {/*I’m actively seeking internship and placement opportunities where I can contribute to engineering teams and grow through real-world development.
-              I value clean code, performance, and thoughtful product execution.*/}
-              I'm actively seeking internship and placement opportunities in Data Science and Analytics roles to leverage analytical skills, drive data-informed decisions, and deliver measurable business impact.
-
+              I enjoy collaborating on open-source projects and continuously improving my skills by building practical projects and sharing my work on GitHub.
             </p>
           </FadeInUp>
         </div>

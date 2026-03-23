@@ -12,7 +12,7 @@ export const Footer = () => {
     >
       <p className="text-muted-foreground text-sm">
         Designed & Built by{" "}
-        <span className="text-primary font-semibold">Nithin Ponnuru</span>
+        <span className="text-primary font-semibold">Aditya Tiwari</span>
       </p>
       <p className="text-muted-foreground/60 text-xs mt-1">
         © {currentYear}

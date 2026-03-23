@@ -4,8 +4,9 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#about", label: "About" },
+  { href: "#education", label: "Education" },
   { href: "#projects", label: "Projects" },
-  {href: "#training", label: "Training" },
+  { href: "#training", label: "Training" },
   { href: "#skills", label: "Skills" },
   { href: "#certifications", label: "Certifications" },
   { href: "#achievements", label: "Achievements" },
@@ -21,8 +22,8 @@ export const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      const sections = ["about", "projects", "skills", "contact"];
-      for (const section of sections.reverse()) {
+      const sections = ["contact", "achievements", "certifications", "skills", "training", "projects", "education", "about"];
+      for (const section of sections) {
         const element = document.getElementById(section);
         if (element && window.scrollY >= element.offsetTop - 200) {
           setActiveSection(section);
@@ -65,7 +66,7 @@ export const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            NP
+            AT
           </motion.a>
 
           {/* Desktop Nav Links */}
