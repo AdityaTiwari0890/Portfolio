@@ -2,30 +2,32 @@ import { Award } from "lucide-react";
 import { FadeInLeft } from "@/components/animations/MotionWrapper";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
 
+const resolvePublicPath = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 const certifications = [
   {
     title: "Graphs Camp Participation Certificate",
-    logo: "/algoUniversity.png",
+    logo: resolvePublicPath("/algoUniversity.png"),
     link: "https://drive.google.com/file/d/1hHvYSPn6lesaccLa2fTxGQ58wA3kwMhi/view?usp=sharing",
   },
   {
     title: "Cloud Computing Certification",
-    logo: "/iitkharagpur.png",
+    logo: resolvePublicPath("/iitkharagpur.png"),
     link: "https://drive.google.com/file/d/1MrmcstDzt22YbGRPjTpedQffAYI98m5N/view?usp=sharing",
   },
   {
     title: "Programming in Modern C++ Certification",
-    logo: "/iitkharagpur.png",
+    logo: resolvePublicPath("/iitkharagpur.png"),
     link: "https://drive.google.com/file/d/1I5_D5QfWGJVjj7Qh57-DdXp1_uo2ir0O/view?usp=drive_link",
   },
   {
     title: "Backend Development Course Certification",
-    logo: "/pw.png",
+    logo: resolvePublicPath("/pw.png"),
     link: "https://drive.google.com/file/d/1NUbC_ReJhiH2f1loK5NFrPa6vjJ03Zb7/view?usp=drive_link",
   },
   {
     title: "Data Structures and Algorithms Certification",
-    logo: "/lpu.png",
+    logo: resolvePublicPath("/lpu.png"),
     link: "https://drive.google.com/file/d/1VWTcKl7GZjiDX7vhYUIoXzYPIHX_IurL/view?usp=sharing",
   },
 ];

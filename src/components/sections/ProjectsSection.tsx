@@ -65,7 +65,7 @@ const staticProjects = [
   {
     icon: Zap,
     image: "/weather.png",
-    title: "Today's Weather Forecast",
+    title: "Weather Forecast Dashboard",
     duration: "2025",
     description: [
       "Developed a Weather Forecast Dashboard in Power BI by integrating real-time weather data through API-based Power Query workflows. Performed data cleaning and transformation to build interactive visualizations for temperature, humidity, wind speed, and conditions. Implemented location and time-based filters, enabling intuitive, data-driven insights through a clean dashboard design.",

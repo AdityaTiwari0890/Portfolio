@@ -1,57 +1,104 @@
 import { motion } from "framer-motion";
-import { Code2, Brain, BarChart3, Globe } from "lucide-react";
+import { Code2, Brain, BarChart3, Globe, Database, Server, Cpu, Zap, GitBranch, Monitor, Smartphone, Layers } from "lucide-react";
 import { FadeInLeft } from "@/components/animations/MotionWrapper";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
+
+// Skill icon mapping using Lucide icons
+const getSkillIcon = (skillName: string) => {
+  const iconMap: Record<string, any> = {
+    // Languages
+    "Python": Code2,
+    "C": Code2,
+    "C++": Code2,
+    "Java": Code2,
+    "JavaScript": Code2,
+    "SQL": Database,
+
+    // Web Technologies
+    "HTML": Globe,
+    "CSS": Globe,
+    "Flask": Server,
+    "React": Zap,
+    "NodeJS": Server,
+    "ExpressJS": Server,
+
+    // Machine Learning
+    "Numpy": Cpu,
+    "Pandas": Database,
+    "Matplotlib": BarChart3,
+    "Seaborn": BarChart3,
+    "Supervised": Brain,
+    "Unsupervised": Brain,
+    "Neural Network": Brain,
+    "Deep Learning": Brain,
+
+    // Tools & Platforms
+    "Power BI": BarChart3,
+    "MS Excel": Monitor,
+    "VMware": Server,
+    "Ubuntu": Monitor,
+    "Kali Linux": Monitor,
+    "GitHub": GitBranch,
+
+    // Soft Skills
+    "Team Player": Layers,
+    "Time Management": Zap,
+    "Adaptability": Zap,
+    "Problem Solving": Brain,
+  };
+
+  return iconMap[skillName] || Code2;
+};
 
 const skillCategories = [
   {
     icon: Code2,
     title: "Languages",
     skills: [
-      { name: "Python", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-      { name: "C", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
-      { name: "C++", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
-      { name: "Java", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-      { name: "JavaScript", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-      { name: "SQL", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      { name: "Python", level: "Advanced" },
+      { name: "C", level: "Advanced" },
+      { name: "C++", level: "Advanced" },
+      { name: "Java", level: "Intermediate" },
+      { name: "JavaScript", level: "Intermediate" },
+      { name: "SQL", level: "Advanced" },
     ],
   },
   {
     icon: Brain,
     title: "Web Technologies",
     skills: [
-      { name: "HTML", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-      { name: "CSS", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-      { name: "Flask", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
-      { name: "React", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-      { name: "NodeJS", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-      { name: "ExpressJS", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+      { name: "HTML", level: "Advanced" },
+      { name: "CSS", level: "Intermediate" },
+      { name: "Flask", level: "Intermediate" },
+      { name: "React", level: "Intermediate" },
+      { name: "NodeJS", level: "Intermediate" },
+      { name: "ExpressJS", level: "Intermediate" },
     ],
   },
   {
     icon: Brain,
     title: "Machine Learning",
     skills: [
-      { name: "Numpy", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" },
-      { name: "Pandas", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
-      { name: "Matplotlib", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" },
-      { name: "Seaborn", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/seaborn/seaborn-original.svg" },
-      { name: "Supervised", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikit-learn/scikit-learn-original.svg" },
-      { name: "Unsupervised", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikit-learn/scikit-learn-original.svg" },
-      { name: "Neural Network", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
-      { name: "Deep Learning", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
+      { name: "Numpy", level: "Advanced" },
+      { name: "Pandas", level: "Advanced" },
+      { name: "Matplotlib", level: "Advanced" },
+      { name: "Seaborn", level: "Advanced" },
+      { name: "Supervised", level: "Advanced" },
+      { name: "Unsupervised", level: "Advanced" },
+      { name: "Neural Network", level: "Advanced" },
+      { name: "Deep Learning", level: "Advanced" },
     ],
   },
   {
     icon: BarChart3,
     title: "Tools & Platforms",
     skills: [
-      { name: "Power BI", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg" },
-      { name: "MS Excel", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/excel/excel-original.svg" },
-      { name: "VMware", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vmware/vmware-original.svg" },
-      { name: "Ubuntu", level: "Intermediate", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" },
-      { name: "Kali Linux", level: "Beginner", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kali/kali-original.svg" },
-      { name: "GitHub", level: "Advanced", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+      { name: "Power BI", level: "Advanced" },
+      { name: "MS Excel", level: "Advanced" },
+      { name: "VMware", level: "Intermediate" },
+      { name: "Ubuntu", level: "Intermediate" },
+      { name: "Kali Linux", level: "Beginner" },
+      { name: "GitHub", level: "Advanced" },
     ],
   },
   {
@@ -123,11 +170,14 @@ export const SkillsSection = () => {
                       }}
                     >
                       <div className="flex items-center gap-3">
-                        {skill.iconUrl ? (
-                          <img src={skill.iconUrl} alt={`${skill.name} icon`} className="w-4 h-4 object-contain" />
-                        ) : (
-                          <span className="w-2 h-2 rounded-full bg-primary" />
-                        )}
+                        {(() => {
+                          const IconComponent = getSkillIcon(skill.name);
+                          return IconComponent ? (
+                            <IconComponent size={16} className="text-primary" />
+                          ) : (
+                            <span className="w-2 h-2 rounded-full bg-primary" />
+                          );
+                        })()}
                         <span className="text-muted-foreground font-medium text-sm">
                           {skill.name}
                         </span>

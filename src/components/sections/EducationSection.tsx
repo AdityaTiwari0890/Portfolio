@@ -2,6 +2,8 @@ import { GraduationCap, MapPin, CalendarDays } from "lucide-react";
 import { FadeInLeft, FadeInUp } from "@/components/animations/MotionWrapper";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
 
+const resolvePublicPath = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 const educationItems = [
   {
     institute: "Lovely Professional University, Phagwara, Punjab",
@@ -9,7 +11,7 @@ const educationItems = [
     detail: "CGPA: 8.41",
     duration: "Aug 2023 – Present",
     icon: GraduationCap,
-    logo: '/lpu.png',
+    logo: resolvePublicPath("/lpu.png"),
   },
   {
     institute: "Tiny Tots Senior Secondary Public School, Sultanpur, U.P",
@@ -17,7 +19,7 @@ const educationItems = [
     detail: "Percentage: 81.6%",
     duration: "Apr 2022 – Apr 2023",
     icon: MapPin,
-    logo: '/ttps.png',
+    logo: resolvePublicPath("/ttps.png"),
   },
   {
     institute: "Tiny Tots Senior Secondary Public School, Sultanpur, U.P",
@@ -25,7 +27,7 @@ const educationItems = [
     detail: "Percentage: 78.8%",
     duration: "Apr 2020 – Apr 2021",
     icon: CalendarDays,
-    logo: '/ttps.png',
+    logo: resolvePublicPath("/ttps.png"),
   },
 ];
 
@@ -59,7 +61,7 @@ export const EducationSection = () => {
               const align = idx % 2 === 0 ? "lg:justify-end" : "lg:justify-start";
 
               return (
-                <div key={item.institute} className={`relative lg:flex lg:items-center ${align}`}>
+                <div key={`${item.institute}-${item.degree}`} className={`relative lg:flex lg:items-center ${align}`}>
                   <div className="lg:w-1/2 lg:relative max-w-xl">
                     <div className={`absolute hidden lg:block top-1/2 -translate-y-1/2 ${idx % 2 === 0 ? "right-[-13px]" : "left-[-13px]"}`}>
                       <div className="w-6 h-6 rounded-full bg-primary border-2 border-background" />

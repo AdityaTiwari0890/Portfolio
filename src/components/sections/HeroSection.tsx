@@ -167,7 +167,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
           >
             <img
-              src="/profile.png"
+              src={`${import.meta.env.BASE_URL}profile.png`}
               alt="Aditya Tiwari"
               className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-2xl border-4 border-primary/30"
             />
